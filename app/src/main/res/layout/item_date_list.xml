@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cvDate"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/loDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="?android:dividerVertical"
+        android:orientation="vertical"
+        android:showDividers="middle">
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_marginTop="4dp"
+            android:layout_weight="1"
+            android:padding="4dp"
+            android:textAlignment="center" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="?android:dividerHorizontal"
+            android:showDividers="middle"
+            android:weightSum="6">
+
+            <TextView
+                android:id="@+id/tvTravelStart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_weight="1"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/tvWorkStart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_weight="1"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/tvWorkEnd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_weight="1"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/tvTravelEnd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_weight="1"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/tvBreakTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_weight="1"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/tvTravelDistance"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_weight="1"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="?android:dividerHorizontal"
+            android:showDividers="middle"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/tvWorkHours"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_weight="1"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/tvOverTimeHours"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_weight="1"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/tvTravelHours"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_weight="1"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

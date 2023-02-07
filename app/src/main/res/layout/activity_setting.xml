@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:autofillHints="@string/user_name"
+    tools:context=".activity.setting.SettingActivity">
+
+    <TextView
+        android:id="@+id/tv_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/user_name"
+        app:layout_constraintBaseline_toBaselineOf="@+id/et_user_name"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
+
+    <EditText
+        android:id="@+id/et_user_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:autofillHints="@string/user_name"
+        android:hint="@string/user_name"
+        android:inputType="textPersonName|textCapWords"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_user_name"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/visa_reminder_time"
+        app:layout_constraintBaseline_toBaselineOf="@+id/et_visa_time"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
+
+    <EditText
+        android:id="@+id/et_visa_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:autofillHints="8"
+        android:hint="@string/_8"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_visa_log_reminder"
+        app:layout_constraintTop_toBottomOf="@id/et_user_name" />
+
+    <TextView
+        android:id="@+id/tv_visa_log_reminder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/visa_log_reminder"
+        app:layout_constraintBaseline_toBaselineOf="@+id/et_visa_log_reminder"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
+
+    <EditText
+        android:id="@+id/et_visa_log_reminder"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:autofillHints="@string/_30_days"
+        android:hint="@string/_30_days"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_visa_log_reminder"
+        app:layout_constraintTop_toBottomOf="@id/et_visa_time" />
+
+    <LinearLayout
+        android:id="@+id/loDefaultBreak"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_visa_log_reminder">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            android:text="@string/break_time_default"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
+
+        <Spinner
+            android:id="@+id/sp_break_time_default"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="3"
+            android:ems="10"
+            android:entries="@array/break_time"
+            android:gravity="center"
+            android:inputType="text" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/swIBAU"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1"
+        android:text="@string/ibau_user"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loDefaultBreak"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/swClear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/clear_after_adding_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/swIBAU"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/sw_hide_completed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/hide_completed_dates"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/swClear"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
+
+    <Button
+        android:id="@+id/btnUserSignature"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/user_signature"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sw_hide_completed"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+    <Button
+        android:id="@+id/btnBackup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/backup_restore"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnUserSignature" />
+
+    <TextView
+        android:id="@+id/et_build_ver"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/build_version"
+        app:layout_constraintEnd_toStartOf="@id/et_build_ver_number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnBackup" />
+
+    <TextView
+        android:id="@+id/et_build_ver_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/app_ver"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/et_build_ver"
+        app:layout_constraintTop_toBottomOf="@id/btnBackup" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

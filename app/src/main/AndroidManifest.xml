@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
+    <application
+        android:allowBackup="true"
+        android:fullBackupContent="@xml/backup_descriptor"
+        android:icon="@drawable/launcher_hb"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HaverMiddleEast">
+
+        <activity
+            android:name=".activity.calendar.CalendarActivity"
+            android:label="Calender"
+            android:parentActivityName=".activity.MainActivity"/>
+
+        <service
+            android:name=".activity.backupRestore.BackupService"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name=".activity.backupRestore.RestoreService"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service android:name=".activity.visaLog.VisaAlert"
+            android:exported="false"
+            android:enabled="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <activity
+            android:name=".activity.backupRestore.BackupRestoreActivity"
+            android:label="Backup and Restore"
+            android:parentActivityName=".activity.setting.SettingActivity"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="application/vnd.sqlite3" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activity.ibauView.IBAUViewActivity"
+            android:label="IBAU Service Order"
+            android:parentActivityName=".activity.dataPreview.DataActivity" />
+        <activity
+            android:name=".activity.hmeView.HMEViewActivity"
+            android:label="HME Mission Code"
+            android:parentActivityName=".activity.dataPreview.DataActivity" />
+        <activity
+            android:name=".activity.dataPreview.DataActivity"
+            android:label="Data Preview"
+            android:parentActivityName=".activity.MainActivity" />
+        <activity
+            android:name=".activity.ibauSO.IBAUSOActivity"
+            android:label="Add IBAU Service Order"
+            android:parentActivityName=".activity.newDate.NewDateActivity"/>
+        <activity
+            android:name=".activity.oldDate.OldDateActivity"
+            android:label="Time Sheet"
+            android:parentActivityName=".activity.MainActivity" />
+        <activity
+            android:name=".activity.signature.SignatureViewActivity"
+            android:label="@string/signature"
+            android:parentActivityName=".activity.setting.SettingActivity" />
+        <activity
+            android:name=".activity.signature.SignatureActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".activity.newTimeSheet.NewTimeSheetActivity"
+            android:label="@string/new_time_sheet"
+            android:parentActivityName=".activity.MainActivity" />
+        <activity
+            android:name=".activity.newHMECode.NewHMECodeActivity"
+            android:label="@string/add_new_hme_code"
+            android:parentActivityName=".activity.newDate.NewDateActivity" />
+        <activity
+            android:name=".activity.newCustomer.NewCustomerActivity"
+            android:label="@string/add_new_customer"
+            android:parentActivityName=".activity.newDate.NewDateActivity" />
+        <activity
+            android:name=".activity.setting.SettingActivity"
+            android:label="@string/settings"
+            android:parentActivityName=".activity.MainActivity" />
+        <activity
+            android:name=".activity.visaLog.VisaLogActivity"
+            android:label="@string/visa_log"
+            android:parentActivityName=".activity.MainActivity" />
+        <activity
+            android:name=".activity.newDate.NewDateActivity"
+            android:label="@string/add_new_date"
+            android:parentActivityName=".activity.MainActivity" />
+        <activity android:name=".activity.MainActivity"
+            android:label="@string/app_Header"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".notification.AlarmReceiver"/>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.neklaway.havermiddle_east.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <!-- resource file to create -->
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>

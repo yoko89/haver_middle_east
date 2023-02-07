@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.calendar.CalendarActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="?android:colorPrimary">
+
+        <ImageButton
+            android:id="@+id/btnBackward"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:padding="8dp"
+            app:srcCompat="@drawable/ic_arrow_back"
+            android:contentDescription="@string/back" />
+
+        <TextView
+            android:id="@+id/tvMonth"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:autoSizeMaxTextSize="50sp"
+            android:autoSizeMinTextSize="10sp"
+            android:autoSizeTextType="uniform"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:autoSizeMaxTextSize="50sp"
+            android:autoSizeMinTextSize="10sp"
+            android:autoSizeTextType="uniform"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
+
+        <ImageButton
+            android:id="@+id/btnForward"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:padding="8dp"
+            app:srcCompat="@drawable/ic_arrow_forward"
+            android:contentDescription="@string/next" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHistory"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

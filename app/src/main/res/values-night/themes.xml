@@ -1,0 +1,42 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.HaverMiddleEast" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="android:windowBackground">@color/dark_blue</item>
+        <item name="colorPrimary">@color/darkGray</item>
+        <item name="colorPrimaryVariant">@color/primaryLightColorDark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/secondaryDarkColorDark</item>
+        <item name="colorSecondaryVariant">@color/secondaryLightColorDark</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="android:buttonBarPositiveButtonStyle">@style/Widget.MaterialComponents.Button
+        </item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/Widget.MaterialComponents.Button
+        </item>
+        <item name="android:timePickerDialogTheme">@style/AlertDialogCustom</item>
+        <item name="android:datePickerDialogTheme">@style/AlertDialogCustom</item>
+        <item name="android:alertDialogTheme">@style/AlertDialogCustom</item>
+    </style>
+
+    <style name="AlertDialogCustom" parent="Theme.MaterialComponents.DayNight.Dialog.Alert">
+        <item name="android:windowBackground">@color/dark_blue</item>
+        <item name="colorPrimary">@color/darkGray</item>
+        <item name="colorPrimaryVariant">@color/primaryLightColorDark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+    </style>
+
+    <style name="NegativeButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="PositiveButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+</resources>

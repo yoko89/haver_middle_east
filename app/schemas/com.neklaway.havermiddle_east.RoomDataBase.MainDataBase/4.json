@@ -1,0 +1,290 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 4,
+    "identityHash": "83368c56acf41f73c7b3293a9e6cb9e0",
+    "entities": [
+      {
+        "tableName": "CUSTOMER_TABLE",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`ID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `CUSTOMER_NAME` TEXT, `CUSTOMER_CITY` TEXT, `CUSTOMER_COUNTRY` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "ID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "customerName",
+            "columnName": "CUSTOMER_NAME",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "customerCity",
+            "columnName": "CUSTOMER_CITY",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "customerCountry",
+            "columnName": "CUSTOMER_COUNTRY",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "ID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_CUSTOMER_TABLE_CUSTOMER_NAME",
+            "unique": true,
+            "columnNames": [
+              "CUSTOMER_NAME"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_CUSTOMER_TABLE_CUSTOMER_NAME` ON `${TABLE_NAME}` (`CUSTOMER_NAME`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "HMECODE_TABLE",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`ID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `HME_CODE` TEXT, `CUSTOMER_NAME` TEXT, `MACHINE_TYPE` TEXT, `MACHINE_NUMBER` TEXT, `WORK_DESCRIPTION` TEXT, `FILE_NUMBER` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "ID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "HMECode",
+            "columnName": "HME_CODE",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "customerName",
+            "columnName": "CUSTOMER_NAME",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "machineType",
+            "columnName": "MACHINE_TYPE",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "machineNumber",
+            "columnName": "MACHINE_NUMBER",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "descriptionWork",
+            "columnName": "WORK_DESCRIPTION",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "fileNumber",
+            "columnName": "FILE_NUMBER",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "ID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_HMECODE_TABLE_HME_CODE",
+            "unique": true,
+            "columnNames": [
+              "HME_CODE"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_HMECODE_TABLE_HME_CODE` ON `${TABLE_NAME}` (`HME_CODE`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "IBAUCODE_TABLE",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`ID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `HME_CODE` TEXT, `SERVICE_CODE` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "ID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "HMECode",
+            "columnName": "HME_CODE",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "IBAUSO",
+            "columnName": "SERVICE_CODE",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "ID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "TIME_SHEET_TABLE",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`ID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `DATE` TEXT, `TRAVEL_START` TEXT, `WORK_START` TEXT, `WORK_END` TEXT, `TRAVEL_END` TEXT, `BREAK_TIME` TEXT, `TRAVEL_DISTANCE` INTEGER NOT NULL, `CUSTOMER` TEXT, `HME_CODE` TEXT, `TIME_SHEET_CREATED` INTEGER NOT NULL, `WEEKEND` INTEGER NOT NULL, `SERVICE_CODE` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "ID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "date",
+            "columnName": "DATE",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "travelStartTime",
+            "columnName": "TRAVEL_START",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "workStartTime",
+            "columnName": "WORK_START",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "workEndTime",
+            "columnName": "WORK_END",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "travelEndTime",
+            "columnName": "TRAVEL_END",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "breakHour",
+            "columnName": "BREAK_TIME",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "travelDistance",
+            "columnName": "TRAVEL_DISTANCE",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "customer",
+            "columnName": "CUSTOMER",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "HMECode",
+            "columnName": "HME_CODE",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "timeSheetCreated",
+            "columnName": "TIME_SHEET_CREATED",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "weekEnd",
+            "columnName": "WEEKEND",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "IBAUSO",
+            "columnName": "SERVICE_CODE",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "ID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "VISA_LOG_TABLE",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`ID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `DATE` TEXT, `COUNTRY` TEXT, `ENABLED` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "ID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "date",
+            "columnName": "DATE",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "country",
+            "columnName": "COUNTRY",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "enabled",
+            "columnName": "ENABLED",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "ID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '83368c56acf41f73c7b3293a9e6cb9e0')"
+    ]
+  }
+}

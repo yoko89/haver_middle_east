@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.neklaway.havermiddle_east.activity.newDate.NewDateActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loNewDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/sw_weekend"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/weekend_noWork"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/sw_travel_day"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/travel_day"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sw_weekend" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/date"
+            app:layout_constraintBaseline_toBaselineOf="@+id/et_time_sheet_date"
+            app:layout_constraintEnd_toStartOf="@+id/et_time_sheet_date"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/et_time_sheet_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:focusable="false"
+            android:hint="@string/select_date"
+            android:importantForAutofill="no"
+            android:inputType="date"
+            android:keyboardNavigationCluster="false"
+            app:layout_constraintEnd_toStartOf="@id/btn_date_now"
+            app:layout_constraintStart_toStartOf="@id/et_travel_start_time"
+            app:layout_constraintTop_toBottomOf="@id/sw_travel_day" />
+
+        <Button
+            android:id="@+id/btn_date_now"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="@string/today"
+            android:visibility="visible"
+            app:layout_constraintBaseline_toBaselineOf="@id/et_time_sheet_date"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTravelStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/travel_start"
+            app:layout_constraintBaseline_toBaselineOf="@+id/et_travel_start_time"
+            app:layout_constraintEnd_toStartOf="@+id/et_travel_start_time"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/et_travel_start_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:focusable="false"
+            android:hint="@string/day_start_time"
+            android:importantForAutofill="no"
+            android:inputType="time"
+            app:layout_constraintEnd_toStartOf="@id/btn_travel_start_time_now"
+            app:layout_constraintStart_toEndOf="@+id/tvTravelStart"
+            app:layout_constraintTop_toBottomOf="@id/et_time_sheet_date" />
+
+        <Button
+            android:id="@+id/btn_travel_start_time_now"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="@string/now"
+            app:layout_constraintBaseline_toBaselineOf="@id/et_travel_start_time"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tvWorkStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/work_start"
+            app:layout_constraintBaseline_toBaselineOf="@+id/et_work_start_time"
+            app:layout_constraintEnd_toStartOf="@+id/et_work_start_time"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/et_work_start_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:focusable="false"
+            android:hint="@string/day_start_time"
+            android:importantForAutofill="no"
+            android:inputType="time"
+            app:layout_constraintEnd_toStartOf="@id/btn_work_start_time_now"
+            app:layout_constraintStart_toStartOf="@id/et_travel_start_time"
+            app:layout_constraintTop_toBottomOf="@id/et_travel_start_time" />
+
+        <Button
+            android:id="@+id/btn_work_start_time_now"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="@string/now"
+            app:layout_constraintBaseline_toBaselineOf="@id/et_work_start_time"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tvWorkEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/work_end"
+            app:layout_constraintBaseline_toBaselineOf="@+id/et_work_end_time"
+            app:layout_constraintEnd_toStartOf="@+id/et_work_end_time"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/et_work_end_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:focusable="false"
+            android:hint="@string/day_end_time"
+            android:importantForAutofill="no"
+            android:inputType="time"
+            app:layout_constraintEnd_toStartOf="@id/btn_work_end_time_now"
+            app:layout_constraintStart_toStartOf="@id/et_work_start_time"
+            app:layout_constraintTop_toBottomOf="@id/et_work_start_time" />
+
+        <Button
+            android:id="@+id/btn_work_end_time_now"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="@string/now"
+            app:layout_constraintBaseline_toBaselineOf="@id/et_work_end_time"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTravelEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/travel_end"
+            app:layout_constraintBaseline_toBaselineOf="@+id/et_travel_end_time"
+            app:layout_constraintEnd_toStartOf="@id/et_travel_end_time"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/et_travel_end_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:focusable="false"
+            android:hint="@string/day_end_time"
+            android:importantForAutofill="no"
+            android:inputType="time"
+            app:layout_constraintEnd_toStartOf="@id/btn_travel_end_time_now"
+            app:layout_constraintStart_toStartOf="@id/et_work_end_time"
+            app:layout_constraintTop_toBottomOf="@id/et_work_end_time" />
+
+        <Button
+            android:id="@+id/btn_travel_end_time_now"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="@string/now"
+            app:layout_constraintBaseline_toBaselineOf="@id/et_travel_end_time"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/lo_break_time"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_travel_end_time">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="1"
+                android:text="@string/break_" />
+
+            <Spinner
+                android:id="@+id/sp_break_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="3"
+                android:ems="10"
+                android:entries="@array/break_time"
+                android:inputType="text"
+                android:scaleX="1.2"
+                android:scaleY="1.2"
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_travel_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/travel_distance"
+            app:layout_constraintBaseline_toBaselineOf="@+id/et_travel_distance"
+            app:layout_constraintEnd_toStartOf="@id/et_travel_distance"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/et_travel_distance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:focusedByDefault="false"
+            android:hint="@string/_100"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_travel_distance"
+            app:layout_constraintTop_toBottomOf="@id/lo_break_time" />
+
+        <LinearLayout
+            android:id="@+id/lo_customer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_travel_distance">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:text="@string/customer" />
+
+            <Spinner
+                android:id="@+id/sp_customer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="6"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="text" />
+
+            <ImageButton
+                android:id="@+id/btn_add_customer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="@string/add_new_customer"
+                android:src="@drawable/ic_add"
+                android:backgroundTint="?attr/colorPrimary"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lo_hme_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/lo_customer">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:text="@string/HME_code" />
+
+            <Spinner
+                android:id="@+id/sp_HME_code"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="6"
+                android:ems="10"
+                android:gravity="center"
+                app:icon="@drawable/ic_add" />
+
+            <ImageButton
+                android:id="@+id/btn_add_hme_code"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="0"
+                android:src="@drawable/ic_add"
+                android:backgroundTint="?attr/colorPrimary"
+                android:contentDescription="@string/add_new_hme_code" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lo_IBAU_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/lo_hme_code">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:text="@string/IBAU_code" />
+
+            <Spinner
+                android:id="@+id/sp_IBAU_code"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="6"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="text" />
+
+            <ImageButton
+                android:id="@+id/btn_add_IBAU_code"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/ic_add"
+                android:backgroundTint="?attr/colorPrimary"
+                android:contentDescription="@string/add_ibau_so" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/sw_weekendOverTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="8dp"
+            android:text="@string/weekend_overtime"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lo_IBAU_code" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

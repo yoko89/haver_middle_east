@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.newTimeSheet.NewTimeSheetActivity">
+
+    <TextView
+        android:id="@+id/tvTravelEnd"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_weight="1"
+        android:paddingStart="0dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="0dp"
+        android:paddingBottom="0dp"
+        android:text="@string/travel_end"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@id/lo_hours"
+        app:layout_constraintEnd_toStartOf="@+id/tvBreakTime"
+        app:layout_constraintStart_toEndOf="@id/tvWorkEnd"
+        app:layout_constraintTop_toBottomOf="@id/lo_IBAU_code" />
+
+    <TextView
+        android:id="@+id/tvTravelDistance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_weight="1"
+        android:paddingStart="0dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="0dp"
+        android:paddingBottom="0dp"
+        android:text="@string/travel_dist"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@id/lo_hours"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvBreakTime"
+        app:layout_constraintTop_toBottomOf="@id/lo_IBAU_code" />
+
+    <TextView
+        android:id="@+id/tvWorkStart"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="8dp"
+        android:layout_weight=".5"
+        android:paddingStart="0dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="0dp"
+        android:paddingBottom="0dp"
+        android:text="@string/work_start"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@id/lo_hours"
+        app:layout_constraintEnd_toStartOf="@id/tvWorkEnd"
+        app:layout_constraintStart_toEndOf="@+id/tvTravelStart"
+        app:layout_constraintTop_toBottomOf="@id/lo_IBAU_code" />
+
+    <TextView
+        android:id="@+id/tvBreakTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_weight="1"
+        android:paddingStart="0dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="0dp"
+        android:paddingBottom="0dp"
+        android:text="@string/break__"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@id/lo_hours"
+        app:layout_constraintEnd_toStartOf="@+id/tvTravelDistance"
+        app:layout_constraintStart_toEndOf="@id/tvTravelEnd"
+        app:layout_constraintTop_toBottomOf="@id/lo_IBAU_code" />
+
+    <TextView
+        android:id="@+id/tvTravelStart"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:paddingStart="0dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="0dp"
+        android:paddingBottom="0dp"
+        android:text="@string/travel_start"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@id/lo_hours"
+        app:layout_constraintEnd_toStartOf="@id/tvWorkStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lo_IBAU_code" />
+
+    <TextView
+        android:id="@+id/tvWorkEnd"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_weight="1"
+        android:paddingStart="0dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="0dp"
+        android:paddingBottom="0dp"
+        android:text="@string/work_end"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@id/lo_hours"
+        app:layout_constraintEnd_toStartOf="@id/tvTravelEnd"
+        app:layout_constraintStart_toEndOf="@id/tvWorkStart"
+        app:layout_constraintTop_toBottomOf="@id/lo_IBAU_code" />
+
+    <LinearLayout
+        android:id="@+id/lo_customer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            android:text="@string/customer" />
+
+        <Spinner
+            android:id="@+id/sp_customer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="6"
+            android:ems="10"
+            android:inputType="text" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lo_hme_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/lo_customer">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            android:text="@string/HME_code" />
+
+        <Spinner
+            android:id="@+id/sp_HME_code"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="6"
+            android:ems="10"
+            android:inputType="text" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lo_IBAU_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/lo_hme_code">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            android:text="@string/IBAU_code" />
+
+        <Spinner
+            android:id="@+id/sp_IBAU_code"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="6"
+            android:ems="10"
+            android:inputType="text" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_dates"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:fadeScrollbars="false"
+        app:layout_constraintBottom_toTopOf="@id/etSignerName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lo_hours">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/tvCustomerSignName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/name_of_signer"
+        app:layout_constraintBaseline_toBaselineOf="@id/etSignerName"
+        app:layout_constraintBottom_toTopOf="@id/btnNewSign"
+        app:layout_constraintEnd_toStartOf="@id/etSignerName"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/etSignerName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:hint="@string/engineering_manager_name"
+        android:importantForAutofill="no"
+        android:singleLine="false"
+        android:labelFor="@id/tvCustomerSignName"
+        android:inputType="textPersonName|textCapWords"
+        app:layout_constraintBottom_toTopOf="@+id/btnNewSign"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvCustomerSignName" />
+
+    <ImageButton
+        android:id="@+id/btnNewSign"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_margin="8dp"
+        android:backgroundTint="@drawable/background_button"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_pen"
+        android:text="@string/sign_sheet"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnWithoutSign"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="@color/white"
+        android:contentDescription="SignPDF" />
+
+    <ImageButton
+        android:id="@+id/btnWithoutSign"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_margin="8dp"
+        android:backgroundTint="@drawable/background_button"
+        android:src="@drawable/ic_no_pen"
+        android:text="@string/without_signature"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnViewPdf"
+        app:layout_constraintStart_toEndOf="@id/btnNewSign"
+        app:layout_constraintTop_toBottomOf="@id/etSignerName"
+        android:scaleType="fitCenter"
+        app:tint="@color/white"
+        android:contentDescription="withoutSign"/>
+
+    <ImageButton
+        android:id="@+id/btnViewPdf"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_margin="8dp"
+        android:backgroundTint="@drawable/background_button"
+        android:src="@drawable/ic_pdf"
+        android:text="@string/view_pdf"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnAttachMail"
+        app:layout_constraintStart_toEndOf="@id/btnWithoutSign"
+        app:layout_constraintTop_toBottomOf="@id/etSignerName"
+        android:scaleType="fitCenter"
+        app:tint="@color/white"
+        android:contentDescription="View PDF"/>
+
+    <ImageButton
+        android:id="@+id/btnAttachMail"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_margin="8dp"
+        android:backgroundTint="@drawable/background_button"
+        style="@style/Theme.HaverMiddleEast"
+        android:src="@drawable/ic_email"
+        android:text="@string/send_by_email"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnViewPdf"
+        app:layout_constraintTop_toBottomOf="@id/etSignerName"
+        android:scaleType="fitCenter"
+        app:tint="@color/white"
+        android:contentDescription="email PDF"/>
+
+
+    <LinearLayout
+        android:id = "@+id/lo_hours"
+        app:layout_constraintTop_toBottomOf="@id/tvTravelStart"
+        app:layout_constraintBottom_toTopOf="@id/rv_dates"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:showDividers="middle"
+        android:weightSum="3">
+
+        <TextView
+            android:id="@+id/tvWorkHours"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:text="@string/work_hours"
+
+            />
+
+        <TextView
+            android:id="@+id/tvOverTimeHours"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:text="@string/over_time_hours"
+            />
+
+        <TextView
+            android:id="@+id/tvTravelHours"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:text="@string/travel_hours"
+            />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

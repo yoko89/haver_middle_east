@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.visaLog.VisaLogActivity">
+
+    <Spinner
+        android:id="@+id/sp_visa_country"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:entries="@array/country_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/et_visa_date"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/visa_country"
+        app:layout_constraintBaseline_toBaselineOf="@+id/sp_visa_country"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_conversion_absoluteHeight="19dp"
+        tools:layout_conversion_absoluteWidth="79dp" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/ExpiryDate"
+        app:layout_constraintBaseline_toBaselineOf="@+id/et_visa_date"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_conversion_absoluteHeight="19dp"
+        tools:layout_conversion_absoluteWidth="29dp" />
+
+    <EditText
+        android:id="@+id/et_visa_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:focusable="false"
+        android:hint="@string/select_date"
+        android:importantForAutofill="no"
+        android:inputType="date"
+        android:keyboardNavigationCluster="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sp_visa_country"
+        tools:layout_conversion_absoluteHeight="45dp"
+        tools:layout_conversion_absoluteWidth="212dp" />
+
+    <TextView
+        android:id="@+id/swEnabled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="48dp"
+        android:text="@string/enable"
+        android:padding="2dp"
+        android:textIsSelectable="false"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/rv_visa"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_visa_date" />
+
+    <TextView
+        android:id="@+id/tvCountry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/visa___country"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/rv_visa"
+        app:layout_constraintStart_toEndOf="@id/swEnabled"
+        app:layout_constraintTop_toBottomOf="@id/et_visa_date" />
+
+    <TextView
+        android:id="@+id/tvExpiryDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/ExpiryDate"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/rv_visa"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_visa_date" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/remaining___days"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/rv_visa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_visa_date" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_visa"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCountry"
+        tools:layout_conversion_absoluteHeight="0dp"
+        tools:layout_conversion_absoluteWidth="432dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

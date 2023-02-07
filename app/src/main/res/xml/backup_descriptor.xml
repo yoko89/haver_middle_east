@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Remove the following "exclude" elements to make them a part of the auto backup -->
+    <include
+        domain="database"
+        path="mainData.db" />
+    <!-- Exclude the shared preferences file that contains the GCM registrationId -->
+    <include
+        domain="sharedpref"
+        path="." />
+    <include
+        domain="file"
+        path="signatures" />
+
+
+
+</full-backup-content>
